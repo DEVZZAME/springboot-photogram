@@ -26,7 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/auth/signin")
+                .loginPage("/auth/signin") //GET
+                .loginProcessingUrl("/auth/signin") //POST
                 .defaultSuccessUrl("/");
         // "/", "/user/**", "/image/**", "/subscribe/**", "/comment/**"와 같은 요청이 왔을 경우에는 인증이 필요함.
         // 그 이외의 요청에 대해서는 모두 권한 없이도 접근이 가능하도록 설정.
